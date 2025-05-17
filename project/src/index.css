@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cherry-50: #FEF2F2;
+  --cherry-100: #FDE6E6;
+  --cherry-200: #FACACB;
+  --cherry-300: #F7A2A3;
+  --cherry-400: #F06D70;
+  --cherry-500: #D2042D;
+  --cherry-600: #B8032A;
+  --cherry-700: #990011;
+  --cherry-800: #7C0312;
+  --cherry-900: #67020E;
+  --cherry-950: #450009;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth transition for dark mode */
+html.transitioning * {
+  transition-duration: 200ms;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.neutral.100');
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: theme('colors.neutral.800');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.neutral.300');
+  border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: theme('colors.neutral.600');
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.cherry.400');
+}
+
+/* Perspective for 3D effects */
+.perspective {
+  perspective: 1000px;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-cherry {
+  background: linear-gradient(135deg, var(--cherry-600), var(--cherry-800));
+}
+
+/* Selection color */
+::selection {
+  background: var(--cherry-500);
+  color: white;
+}
